@@ -5,14 +5,14 @@
 #include "Model.h"
 const float kd = 0.8;
 
-// ��ɫģʽ��ȫ��ɫ����Ƭ�����ɫ�͵��ԴDiffuse����
+// 着色模式：全白色、面片随机颜色和点光源Diffuse三种
 enum ShaderPattern {
 	WHITE = 0,
 	RANDOM_COLOR = 1,
 	LIGHT_DIFFUSE = 2
 };
 
-// ��Ҫ˵����ʱ��Ϊ��չʾ����ͬ��Ƭ�ı߽磬��ɫʱÿ����Ƭ����ͬ������ɫ����������ƽ��ģʽ�������ݵ����ɫ��ֵ
+// 需要说明的时，为了展示出不同面片的边界，着色时每个面片都是同样的颜色，而不是像平滑模式那样根据点的颜色插值
 class Shader
 {
 public:

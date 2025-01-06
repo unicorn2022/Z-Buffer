@@ -4,16 +4,16 @@
 
 #include "Fragment.h"
 
-// ×î»ù´¡µÄZBuffer
+// æœ€åŸºç¡€çš„ZBuffer
 class NaiveZBuffer
 {
 public:
 	NaiveZBuffer() = delete;
 	NaiveZBuffer(int w, int h);
 	~NaiveZBuffer();
-	void initialize(); // ³õÊ¼»¯¼°·ÖÅä¿Õ¼ä
-	void renderPolygons(Polygons& fragments); // ±éÀú»æÖÆËùÓĞÃæÆ¬
-	void renderPolygon(Fragment& fragment); // Éî¶È²âÊÔ²¢»æÖÆµ¥¸öÃæÆ¬
+	void initialize(); // åˆå§‹åŒ–åŠåˆ†é…ç©ºé—´
+	void renderPolygons(Polygons& fragments); // éå†ç»˜åˆ¶æ‰€æœ‰é¢ç‰‡
+	void renderPolygon(Fragment& fragment); // æ·±åº¦æµ‹è¯•å¹¶ç»˜åˆ¶å•ä¸ªé¢ç‰‡
 	Color3f* getFrameBuffer() { return frameBuffer; }
 	void release();
 private:

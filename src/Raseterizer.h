@@ -4,13 +4,13 @@
 
 #include "Model.h"
 
-// ¹âÕ¤»¯
+// å…‰æ …åŒ–
 class Rasterizer
 {
 public:
 	Rasterizer(int w, int h) { width = w; height = h; }
 	inline void setSize(int w, int h) { width = w; height = h; }
-	void rasterize(Model& model); // ¶Ôµ¥¸öModel½øĞĞ¹âÕ¤»¯£¬¼ÆËã½á¹ûÖ±½Ó´¢´æÔÚÔ­À´µÄModelÀàÖĞ
+	void rasterize(Model& model); // å¯¹å•ä¸ªModelè¿›è¡Œå…‰æ …åŒ–ï¼Œè®¡ç®—ç»“æœç›´æ¥å‚¨å­˜åœ¨åŸæ¥çš„Modelç±»ä¸­
 private:
 	int width, height;
 };

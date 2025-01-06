@@ -20,14 +20,12 @@ void Fragment::addPoint(Point3f p)
 	maxZ = std::fmax(maxZ, p.z);
 }
 
-float Fragment::caculateZ(Vec2f pixel)
-{
-	if (vPos.size() == 3)
-	{
+float Fragment::caculateZ(Vec2f pixel) {
+	if (vPos.size() == 3) {
 		return caculateZTriangle(pixel, 0, 1, 2);
 	}
-	else // ËÄ±ßÐÎÔõÃ´ÖØÐÄ²åÖµ //»òÐí¿ÉÒÔÓÃ±éÀúÈý¸öÈý½ÇÐÎµÄ·½·¨
-	{
+	else {
+		// å››è¾¹å½¢æ€Žä¹ˆé‡å¿ƒæ’å€¼ //æˆ–è®¸å¯ä»¥ç”¨éåŽ†ä¸‰ä¸ªä¸‰è§’å½¢çš„æ–¹æ³• 
 		float z1 = caculateZTriangle(pixel, 0, 1, 2);
 		float z2 = caculateZTriangle(pixel, 1, 2, 3);
 		float z3 = caculateZTriangle(pixel, 0, 1, 3);
@@ -36,8 +34,7 @@ float Fragment::caculateZ(Vec2f pixel)
 	}
 }
 
-float Fragment::caculateZTriangle(Vec2f pixel, int aIdx, int bIdx, int cIdx)
-{
+float Fragment::caculateZTriangle(Vec2f pixel, int aIdx, int bIdx, int cIdx) {
 	float z = -FLT_MAX;
 	Point3f A = vPos[aIdx];
 	Point3f B = vPos[bIdx];
@@ -45,8 +42,7 @@ float Fragment::caculateZTriangle(Vec2f pixel, int aIdx, int bIdx, int cIdx)
 	float alpha = (-(pixel.x - B.x) * (C.y - B.y) + (pixel.y - B.y) * (C.x - B.x)) / (-(A.x - B.x) * (C.y - B.y) + (A.y - B.y) * (C.x - B.x));
 	float beta = (-(pixel.x - C.x) * (A.y - C.y) + (pixel.y - C.y) * (A.x - C.x)) / (-(B.x - C.x) * (A.y - C.y) + (B.y - C.y) * (A.x - C.x));
 	float gamma = 1 - alpha - beta;
-	if (alpha >= 0 && beta >= 0 && gamma >= 0)
-	{
+	if (alpha >= 0 && beta >= 0 && gamma >= 0) {
 		z = A.z * alpha + B.z * beta + C.z * gamma;
 	}
 	return z;

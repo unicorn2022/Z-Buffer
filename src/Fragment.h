@@ -9,9 +9,9 @@
 #include <cinttypes>
 class Fragment
 {
-// ¹ÜÀí¹âÕ¤»¯Ö®ºóµÄÃæÆ¬£¨Ö§³ÖÈý½ÇÐÎÃæÆ¬ºÍËÄ±ßÐÎÃæÆ¬£©
-// ¿ÉÒÔÍ¨¹ýÖØÐÄ×ø±ê²åÖµµÄ·½Ê½¼ÆËãµ±Ç°ÏñËØµÄZÖµ
-// ¶ÔÓÚËÄ±ßÐÎÃæÆ¬£¬´¦Àí·½·¨ÊÇ²ÉÑùÈý´Î£¬Ã¿´Î²ÉÑùÈý¸öµã×é³ÉÒ»¸öÈý½ÇÐÎ¼ÆËã£¬²¢Ñ¡È¡ÖØÐÄ×ø±ê·ûºÏÒªÇóµÄ½á¹û
+// ç®¡ç†å…‰æ …åŒ–ä¹‹åŽçš„é¢ç‰‡ï¼ˆæ”¯æŒä¸‰è§’å½¢é¢ç‰‡å’Œå››è¾¹å½¢é¢ç‰‡ï¼‰
+// å¯ä»¥é€šè¿‡é‡å¿ƒåæ ‡æ’å€¼çš„æ–¹å¼è®¡ç®—å½“å‰åƒç´ çš„Zå€¼
+// å¯¹äºŽå››è¾¹å½¢é¢ç‰‡ï¼Œå¤„ç†æ–¹æ³•æ˜¯é‡‡æ ·ä¸‰æ¬¡ï¼Œæ¯æ¬¡é‡‡æ ·ä¸‰ä¸ªç‚¹ç»„æˆä¸€ä¸ªä¸‰è§’å½¢è®¡ç®—ï¼Œå¹¶é€‰å–é‡å¿ƒåæ ‡ç¬¦åˆè¦æ±‚çš„ç»“æžœ
 public:
 	Fragment(Model& model, int faceid);
 	void addPoint(Point3f p);
@@ -39,7 +39,7 @@ private:
 
 class Polygons
 {
-// °üº¬Ò»¸övector£¬¹ÜÀí³¡¾°ÖÐËùÓÐµÄÈý½ÇÐÎÃæÆ¬Fragment
+// åŒ…å«ä¸€ä¸ªvectorï¼Œç®¡ç†åœºæ™¯ä¸­æ‰€æœ‰çš„ä¸‰è§’å½¢é¢ç‰‡Fragment
 public:
 	std::vector<Fragment> fragments;
 	float minZ = FLT_MAX, maxZ = -FLT_MAX;

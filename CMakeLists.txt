@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.15)
 # set the project name
 project(Z-Buffer VERSION 1.0.0)
 
-file(GLOB_RECURSE ALL_SOURCE   
-${PROJECT_SOURCE_DIR}/src/*.c
+file(GLOB_RECURSE ALL_SOURCE
+${PROJECT_SOURCE_DIR}/*.cpp
 ${PROJECT_SOURCE_DIR}/src/*.cpp
 )
 
